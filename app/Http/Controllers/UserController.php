@@ -15,4 +15,11 @@ class UserController extends Controller
             'users' => $users
         ]);
     }
+
+    public function show(User $user)
+    {
+        return view('users.show', [
+            'user' => $user
+        ]);
+    }
 }
