@@ -1,25 +1,30 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
     purge: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+        "./storage/framework/views/*.php",
+        "./resources/views/**/*.blade.php",
     ],
 
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
         },
     },
 
     variants: {
         extend: {
-            opacity: ['disabled'],
+            opacity: ["disabled"],
         },
+        lineClamp: ["responsive", "hover"],
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require("@tailwindcss/forms"),
+        require("@tailwindcss/aspect-ratio"),
+        require("@tailwindcss/line-clamp"),
+    ],
 };
